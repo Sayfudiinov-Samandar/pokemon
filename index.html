@@ -1,25 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./main.css">
 </head>
+
 <body class="bg-primary">
-    
+
+
+    <header>
+
+    </header>
+
     <h1 class="text-center m-0">
         <img class="h-auto " src="./images/pngegg.png" width="1050" height="800" alt="Pokemons">
     </h1>
 
-    <div class="container ">
+    <div class="container">
+        <nav class="navbar d-block w-50 mx-auto mb-5">
+            <form class="search-form d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+                <select class="form-select w-50 me-2">
+                    <option value="All">All weaknesses</option>
+                </select>
+
+                <select class="form-select-type form-select w-50 me-2">
+                    <option value="All">All type</option>
+                </select>
+
+                <select class="sort-by form-select w-50 me-2">
+                    <option value="default">Default</option>
+                    <option value="a-z">A-Z</option>
+                    <option value="z-a">Z-A</option>
+                    <option value="m">By heigth</option>
+                    <option value="kg">By weigth</option>
+
+
+
+                </select>
+
+                <button class="btn btn-warning" type="submit">Search</button>
+            </form>
+        </nav>
+        <ul class="domList row justify-content-center p-0 gap-3">
+
+        </ul>
     </div>
 
 
+    <template class="item-tempale">
+        <li class="listItem list-unstyled">
+            <div class="inner">
+                <div class="more-info rounded-3 p-3 pt-2 bg-info ">
+                    <strong class="text-warning d-block mb-3">Pokemons info</strong>
+                    <p class="text-weaknesses bg-warning p-1 rounded-3 text-s">Fire Ice Flying Psychic</p>
+                    <p class="type-pokemon bg-warning p-1 rounded-3 text-s">Grass Poison</p>
+                    <p class="height-pokemon bg-warning p-1 rounded-3 text-s">0.99 m</p>
+                    <p class="weight-pokemon bg-warning p-1 rounded-3 text-s">13.0 kg'</p>
+                    <p class="candy_count-pokemon bg-warning p-1 rounded-3 text-s">100</p>
+                    <p class="egg-pokemon bg-warning p-1 rounded-3 text-s">Not in Eggs</p>
+                </div>
+                
+                <div class="this  bg-info col-2 d-flex flex-column rounded-3 border-2 border-dark  align-items-center p-0">
+                    <span class="topNumber position-absolute bg-danger text-warning px-1 rounded-3 top-0 start-100 translate-middle"></span>
+                    <div class="listTopBox">
+                        <h3 class="itemName text-warning py-1 px-1 mt-3 bg-danger rounded-4 text-center"></h3>
+                        <img class="itemImg" width="150" height="200" src="" alt="">
+                    </div>
+                    
+                    <div class="itemBottombox p-3 text-white text-center d-flex flex-column">
+                        <div class="itemCandy d-inline w-auto text-dark "></div>
+                        <time class="itemTime"></time>
+                    </div>
+                </div>
+                
+
+
+            </div>
+        </li>
+    </template>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/pokemons.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
