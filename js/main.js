@@ -14,8 +14,8 @@ let selectFragment=new DocumentFragment()
 let selectFragmentType=new DocumentFragment()
 let selectFragmentheight=new DocumentFragment()
 
-let weaknessesArray=[]
-let typeCate=[]
+let weaknessesArray= new Set()
+let typeCate=new Set()
 let heigthArray=[]
 
 function makeList(array) {
@@ -93,20 +93,19 @@ function findWeaknesses(){
     pokemons.forEach(item=>{
         let candies=item.weaknesses
         let typePok=item.type
+
+        
         candies.forEach(elm=>{
-            if (!weaknessesArray.includes(elm)) {
-                weaknessesArray.push(elm)
-            }
+            weaknessesArray.add(elm)
         })
 
         typePok.forEach(i=>{
-            if (!typeCate.includes(i)) {
-                typeCate.push(i)
-            }
+            typeCate.add(i)
         })
     })
 }
  
+
 function createOption() {
     weaknessesArray.forEach(item=>{
         let forEloption=document.createElement("option");
